@@ -23,7 +23,6 @@ export const fill = (payload: Starships): StarshipsActionTypes => ({
     payload,
 });
 
-
 // Async
 export const fetchAsync = (): StarshipsFetchAsyncAction => ({
     type: FETCH_STARSHIPS_ASYNC,
