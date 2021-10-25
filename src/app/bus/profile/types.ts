@@ -1,7 +1,6 @@
 export type Profile = {
     firstName: string,
     lastName: string,
-    isFetching: boolean,
 }
 
 // Sync

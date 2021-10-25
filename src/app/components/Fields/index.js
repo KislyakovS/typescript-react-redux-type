@@ -3,7 +3,7 @@ import cx from 'classnames';
 import { Field } from 'redux-form';
 
 const getValidityClassName = (meta) => {
-    if(meta.asyncValidating) {
+    if (meta.asyncValidating) {
         return 'async-validating';
     }
 
@@ -19,7 +19,6 @@ const getValidityClassName = (meta) => {
         return 'valid';
     }
 }
-
 
 export const customInput = (props) => {
     const { label, input, type, meta } = props;
@@ -40,7 +39,7 @@ export const customInput = (props) => {
                     <div className="feedback-text error-text">
                         {meta.error}
                     </div>
-            )}
+                )}
         </div>
     );
 };

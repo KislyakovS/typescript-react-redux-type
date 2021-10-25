@@ -1,13 +1,18 @@
 // Core
-import React from 'react';
+import React, { FC } from 'react';
 import { useDispatch } from 'react-redux';
 import { push } from 'connected-react-router';
+
+// Types
+import { RouteComponentProps } from 'react-router-dom';
+
 
 // Instruments
 import Styles from './styles.module.css';
 import { book } from '../../routes/book';
 
-export const Nav = (props) => {
+
+export const Nav: FC<RouteComponentProps> = (props) => {
     const dispatch = useDispatch();
 
     const _navigateToRoot = () => dispatch(push(book.root));
@@ -19,18 +24,18 @@ export const Nav = (props) => {
     } = props;
 
     return (
-        <section className = { Styles.nav }>
+        <section className={Styles.nav}>
             {pathname === book.root ? null : (
                 <>
-                    <button onClick = { _navigateToProfile }>
+                    <button onClick={_navigateToProfile}>
                         Профиль
                     </button>
-                    <button onClick = { _navigateToPanel }>
+                    <button onClick={_navigateToPanel}>
                         Панель
                     </button>
                     <button
-                        className = { Styles.bridge }
-                        onClick = { _navigateToRoot }>
+                        className={Styles.bridge}
+                        onClick={_navigateToRoot}>
                         Мостик
                     </button>
                 </>

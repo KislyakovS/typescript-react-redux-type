@@ -1,5 +1,5 @@
 // Core
-import React from 'react';
+import React, { FC } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 // Types
@@ -10,7 +10,7 @@ import Styles from './styles.module.css';
 import { fetchAsync as fetchStarshipsAsync } from '../../bus/feed/actions';
 import { StarshipTile } from '../StarshipTile';
 
-export const Panel = () => {
+export const Panel: FC = () => {
     const dispatch = useDispatch();
     const starships = useSelector((state: AppState) => state.feed.starships);
     const isFetching = useSelector((state: AppState) => state.feed.isFetching);

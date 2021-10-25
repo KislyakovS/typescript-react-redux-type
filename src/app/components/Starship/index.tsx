@@ -10,7 +10,6 @@ import Styles from './styles.module.css';
 
 // Type
 import { AppState } from '../../init/rootReducer';
-// import { Starships } fr
 
 type Params = {
     starship?: string;

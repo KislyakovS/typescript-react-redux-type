@@ -1,13 +1,16 @@
 // Core
-import React from 'react';
+import React, { FC } from 'react';
 import { useDispatch } from 'react-redux';
 import { push } from 'connected-react-router';
+
+// Types
+import { Starship } from '../../bus/feed/types';
 
 // Instruments
 import Styles from './styles.module.css';
 import { book } from '../../routes/book';
 
-export const StarshipTile = (props) => {
+export const StarshipTile: FC<Starship> = (props: Starship) => {
     const dispatch = useDispatch();
 
     const {
@@ -18,14 +21,14 @@ export const StarshipTile = (props) => {
     } = props;
 
     const _navigateToStarship = () => {
-        const url = `${book.panel}/${name.replace(/ /g,'-').toLowerCase()}`;
+        const url = `${book.panel}/${name.replace(/ /g, '-').toLowerCase()}`;
         dispatch(push(url));
     }
 
     return (
         <section
             className={Styles.starshipTile}
-            onClick={ _navigateToStarship }
+            onClick={_navigateToStarship}
         >
             <h1>Ω</h1>
             <div className={Styles.description}>

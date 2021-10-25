@@ -1,5 +1,8 @@
-type Starship = {
+export type Starship = {
     name: string;
+    starship_class: string;
+    manufacturer: string;
+    crew: string;
 };
 
 export type Starships = Starship[];

@@ -7,7 +7,11 @@ import {
     STOP_FETCHING
 } from './types';
 
-const initialState: Profile = {
+type ProfileState = Profile & {
+    isFetching: boolean;
+}
+
+const initialState: ProfileState = {
     firstName: 'Уолтер',
     lastName: 'Уайт',
     isFetching: false,
@@ -16,7 +20,7 @@ const initialState: Profile = {
 export const profileReducer = (
     state = initialState,
     action: ProfileActionTypes
-): Profile => {
+): ProfileState => {
     switch (action.type) {
         case FILL_PROFILE:
             return { ...state, ...action.payload };
