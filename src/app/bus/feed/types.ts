@@ -2,7 +2,9 @@ type Starship = {
     name: string;
 };
 
-export type Starships = Starship[];
+export type Starships = {
+    results: Starship[]
+};
 
 // Sync
 export const START_FETCHING = 'START_FETCHING';
