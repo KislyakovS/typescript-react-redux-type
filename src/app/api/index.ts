@@ -2,9 +2,13 @@ import { SWAPI_STARSHIPS } from './config';
 
 import { Starships } from '../bus/feed/types';
 
+type ResultsStarships = {
+  results: Starships;
+};
+
 type APIFetch = {
   starships: {
-    get: () => Promise<Starships>
+    get: () => Promise<ResultsStarships>
   };
 };
 
