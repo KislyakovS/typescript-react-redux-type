@@ -29,7 +29,6 @@ export const feedReducer = (
         case FILL_STARSHIPS:
             return { ...state, starships: [...action.payload] };
         default:
-            // eslint-disable-next-line no-case-declarations,@typescript-eslint/no-unused-vars
             const x: never = state;
     }
 

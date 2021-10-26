@@ -17,7 +17,7 @@ export const api: APIFetch = {
     get() {
       return fetch(SWAPI_STARSHIPS)
         .then((response) => response.json())
-        .then(({ results }) => ({ results }));
+        .then((data) => data.results);
     }
   },
 };
